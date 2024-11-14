@@ -1,0 +1,52 @@
+{
+  "text": "救援一覧",
+  "region": [2257, 1350, 144, 120],
+  "lang": "japan",
+  "left": null,
+  "right": {
+    "text": "参戦",
+    "region": [1842, 1301, 377, 126],
+    "lang": "japan",
+    "left": {
+      "text": "決定",
+      "region": [2089, 1363, 291, 104],
+      "lang": "japan",
+      "left": {
+      "text": "出撃",
+      "region": [2258, 1323, 389, 127],
+      "lang": "japan",
+      "left": {
+      "region": [2138, 432, 148, 146],
+      "recognition":"OpenCV" ,
+      "template":"./minashigonoshigoto_pic/close.png" ,
+        "comment":"点击战斗完成后的×键" ,
+      "left": {
+      "text": "次へ",
+      "region": [1232, 1533, 377, 125],
+      "lang": "japan",
+        "comment": "点击×键后的次へ",
+      "left": {
+      "text": "次へ",
+      "region": [1232, 1533, 377, 125],
+      "lang": "japan",
+        "comment": "点击×键后的次へ后的次へ",
+      "left": null,
+      "right": null
+    },
+      "right": null
+    },
+      "right": null
+    },
+      "right": null
+    },
+      "right": null
+    },
+    "right": {
+      "text": "O K",
+      "region": [1230, 1156, 381, 124],
+      "lang": "en",
+      "left": null,
+      "right": null
+    }
+  }
+}

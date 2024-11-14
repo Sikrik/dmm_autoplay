@@ -1,0 +1,54 @@
+{
+  "actions": [
+    {
+      "text": "救援戦",
+      "region": [2493, 1191, 132, 65],
+      "lang": "japan"
+    },
+    {
+      "text": "BP2",
+      "region": [2053, 581, 469, 876],
+      "lang": "en"
+    },
+    {
+      "text": "挑戦",
+      "region": [2107, 1255, 471, 141],
+      "lang": "japan"
+    },
+    {
+      "text": "戻る",
+      "region": [1780, 1272, 311, 118],
+      "lang": "japan"
+    },
+    {
+      "text": "取消",
+      "region": [2085, 446, 122, 96],
+      "lang": "japan",
+      "next_action": "./juru_pic/refresh.png"
+    },
+    {
+      "text": "次へ",
+      "region": [1220, 1490, 411, 117],
+      "lang": "japan"
+    },
+    {
+      "text": "解放",
+      "region": [1220, 1490, 411, 117],
+      "lang": "japan"
+    },
+    {
+      "text": "閉じる",
+      "region": [1220, 1490, 411, 117],
+      "lang": "japan"
+    }
+  ],
+  "backs": [
+    {
+      "text": "戻る",
+      "region": [1780, 1272, 311, 118],
+      "lang": "japan",
+      "next_action": "./juru_pic/refresh.png",
+      "next_region": [2085, 446, 122, 96]
+    }
+  ]
+}

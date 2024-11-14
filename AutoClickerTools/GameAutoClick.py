@@ -3,7 +3,7 @@ import time
 import pyautogui
 
 class GameAutoClick:
-    def __init__(self, confidence=0.8, delay=2):
+    def __init__(self, confidence=0.8, delay=0.5):
         """
         初始化GameAutoClick对象
         :param confidence: 模板匹配的置信度
@@ -36,14 +36,14 @@ class GameAutoClick:
         """
         if coordinates:
             try:
-                pyautogui.click(coordinates[0], coordinates[1], button='left',duration=1.3)
+                pyautogui.click(coordinates[0], coordinates[1], button='left',duration=1)
                 print(f"已点击坐标: x={coordinates[0]}, y={coordinates[1]}")
             except Exception as e:
                 print(f"点击坐标时出现错误: {e}")
         else:
             print("坐标无效，未执行点击操作")
 
-    def routine_click(self, img_model_path, name):
+    def routine_click(self, img_model_path, name=None):
         """
         自动化点击例程，获取坐标并点击
         :param img_model_path: 模板图片路径

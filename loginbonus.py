@@ -1,7 +1,8 @@
 import time
 from time import sleep
 import pyautogui
-from AutoClickerTools import ClickByOCR
+from AutoClickerTools2.OCRClickTool import OCRClickTool
+from autoplay_minashigonoshigoto import screenshot_path
 
 """
 一键领取领取游戏中的登陆奖励
@@ -10,13 +11,11 @@ from AutoClickerTools import ClickByOCR
 
 def miwuliecheshaonv():
     # 初始化 OCR 以避免多次重复加载
-    ClickByOCR.init_ocr(lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
 
-    # 查找并点击目标文本 'dmm'
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500), lang='ch')
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500), lang='ch')
 
-    # 查找并点击目标文本 '迷雾少女列车'
-    ClickByOCR.find_and_click_text('迷雾少女列车', region=(2180, 160, 1000, 1500), lang='ch')
+    ocr_tool.click_on_text('迷雾少女列车', region=(1392, 160, 1000, 1500), lang='ch')
 
     # 等待 10 秒
     sleep(10)
@@ -25,19 +24,19 @@ def miwuliecheshaonv():
     pyautogui.click(1440, 900, button='left')
 
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
     sleep(20)
 
 
 def guerdegongzuo():
     # 初始化 OCR 以避免多次重复加载
-    ClickByOCR.init_ocr(lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
 
     # 查找并点击目标文本 'dmm'
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500))
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500))
 
     # 查找并点击目标文本 '孤儿的工作'，复用 OCR 实例
-    ClickByOCR.find_and_click_text('孤儿的工作', region=(2180, 160, 1000, 1500))
+    ocr_tool.click_on_text('孤儿的工作', region=(1392, 160, 1000, 1500))
 
     # 暂停 2 秒
     sleep(2)
@@ -61,18 +60,18 @@ def guerdegongzuo():
     pyautogui.click(1414, 1214, button='left')
 
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
 
 
 def juruhuanxiangjizhan():
     # 初始化 OCR 以避免多次重复加载
-    ClickByOCR.init_ocr(lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
 
     # 查找并点击目标文本 'dmm'
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500), lang='en')
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500), lang='en')
 
     # 查找并点击目标文本 '巨乳幻想激战'
-    ClickByOCR.find_and_click_text('巨乳幻想激战', region=(2180, 160, 1000, 1500), lang='ch')
+    ocr_tool.click_on_text('巨乳幻想激战', region=(1392, 160, 1000, 1500), lang='ch')
 
     # 等待 2 秒
     sleep(2)
@@ -96,20 +95,19 @@ def juruhuanxiangjizhan():
     sleep(20)
 
     while True:
-        ClickByOCR.find_and_click_text('閉じる', region=(200, 240, 2400, 1400), lang='japan')
-        sleep(2)
-        if ClickByOCR.check_text('ミッション', region=(200, 240, 2400, 1400), lang='japan'):
+        ocr_tool.click_on_text('閉じる', region=(200, 240, 2400, 1400), lang='japan')
+        if ocr_tool.check_text_exists('ミッション', region=(200, 240, 2400, 1400), lang='japan'):
             break
 
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
 
 
 def shanyaoxingqishi():
-    ClickByOCR.init_ocr(lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
     # 查找并点击 'dmm' 和 '闪耀星骑士'
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500), lang='en')
-    ClickByOCR.find_and_click_text('闪耀星骑士', region=(2180, 160, 1000, 1500), lang='ch')
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500), lang='en')
+    ocr_tool.click_on_text('闪耀星骑士', region=(1392, 160, 1000, 1500), lang='ch')
 
     # 暂停 2 秒
     sleep(2)
@@ -130,18 +128,20 @@ def shanyaoxingqishi():
     time.sleep(10)
 
     # 点击指定位置两次
-    pyautogui.click(x=1420, y=1300, button='left', duration=1)
-    time.sleep(2)
-    pyautogui.click(x=1420, y=1300, button='left', duration=1)
+    while True:
+        pyautogui.click(x=1420, y=1300, button='left', duration=1)
+        time.sleep(2)
+        if ocr_tool.check_text_exists("MENU", region=(1730, 257, 265, 70), lang='en'):
+            break
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
 
 
 def deepone():
-    ClickByOCR.init_ocr(lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
     # 第一步：查找并点击 'dmm' 和 'DeepOne'
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500), lang='en')
-    ClickByOCR.find_and_click_text('DeepOne', region=(2180, 160, 1000, 1500), lang='en')
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500), lang='en')
+    ocr_tool.click_on_text('DeepOne', region=(1392, 160, 1000, 1500), lang='en')
 
     # 暂停 2 秒
     sleep(2)
@@ -162,19 +162,19 @@ def deepone():
 
     # 循环点击 “SKIP” 和 “閉じる”，直到找到 “ガチャ”
     while True:
-        ClickByOCR.find_and_click_text('SKIP', region=(200, 240, 2400, 1400), lang='en')
+        ocr_tool.click_on_text('SKIP', region=(200, 240, 2400, 1400), lang='en')
         sleep(2)
-        ClickByOCR.find_and_click_text('閉じる', region=(200, 240, 2400, 1400), lang='japan')
-        if ClickByOCR.check_text('ガチャ', region=(200, 240, 2400, 1400), lang='japan'):
+        ocr_tool.click_on_text('閉じる', region=(200, 240, 2400, 1400), lang='japan')
+        if ocr_tool.check_text_exists('ガチャ', region=(200, 240, 2400, 1400), lang='japan'):
             break
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
 
 
 def chuanqisiyecao():
-    ClickByOCR.init_ocr(lang='ch')
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500), lang='en')
-    ClickByOCR.find_and_click_text('传奇四叶草', region=(2180, 160, 1000, 1500), lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500), lang='en')
+    ocr_tool.click_on_text('传奇四叶草', region=(1392, 160, 1000, 1500), lang='ch')
     sleep(2)
     # 按住鼠标左键
     pyautogui.mouseDown(x=2870, y=520, button='left')
@@ -186,21 +186,21 @@ def chuanqisiyecao():
     pyautogui.mouseUp(button='left')
     sleep(20)
     while True:
-        ClickByOCR.find_and_click_text('OK', region=(200, 240, 2400, 1400), lang='en')
+        ocr_tool.click_on_text('OK', region=(200, 240, 2400, 1400), lang='en')
         sleep(2)
         pyautogui.click(x=1424, y=1131, button='left', duration=1)
         sleep(2)
         pyautogui.click(x=2600, y=468, button='left', duration=1)
-        if ClickByOCR.check_text('ギルド', region=(200, 240, 2400, 1400), lang='japan'):
+        if ocr_tool.check_text_exists('ギルド', region=(200, 240, 2400, 1400), lang='japan'):
             break
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
 
 
 def tianqibeilun():
-    ClickByOCR.init_ocr(lang='ch')
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500), lang='en')
-    ClickByOCR.find_and_click_text('天启悖论', region=(2180, 160, 1000, 1500), lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500), lang='en')
+    ocr_tool.click_on_text('天启悖论', region=(1392, 160, 1000, 1500), lang='ch')
     sleep(2)
     # 按住鼠标左键
     pyautogui.mouseDown(x=2870, y=520, button='left')
@@ -215,52 +215,53 @@ def tianqibeilun():
     while True:
         pyautogui.click(x=1424, y=1131, button='left', duration=1)
         sleep(2)
-        ClickByOCR.find_and_click_text('SKIP', region=(200, 240, 2400, 1400), lang='en')
+        ocr_tool.click_on_text('SKIP', region=(200, 240, 2400, 1400), lang='en')
         sleep(2)
-        ClickByOCR.find_and_click_text('閉じる', region=(200, 240, 2400, 1400), lang='japan')
-        if ClickByOCR.check_text('Rank', region=(200, 240, 2400, 1400), lang='en'):
+        ocr_tool.click_on_text('閉じる', region=(200, 240, 2400, 1400), lang='japan')
+        if ocr_tool.check_text_exists('Rank', region=(200, 240, 2400, 1400), lang='en'):
             break
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
 
 
 def yaoguailuanwu():
-    ClickByOCR.init_ocr(lang='ch')
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500), lang='en')
-    ClickByOCR.find_and_click_text('妖怪乱舞', region=(2180, 160, 1000, 1500), lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500), lang='en')
+    ocr_tool.click_on_text('妖怪乱舞', region=(1392, 160, 1000, 1500), lang='ch')
     sleep(15)
     while True:
-        ClickByOCR.find_and_click_text('OK', region=(200, 240, 2400, 1400), lang='en')
+        ocr_tool.click_on_text('OK', region=(200, 240, 2400, 1400), lang='en')
         sleep(2)
         pyautogui.click(x=1424, y=1131, button='left', duration=1)
         sleep(2)
-        ClickByOCR.find_and_click_text('閉じる', region=(200, 240, 2400, 1400), lang='japan')
-        if ClickByOCR.check_text('閑催中', region=(200, 240, 2400, 1400), lang='japan'):
+        ocr_tool.click_on_text('閉じる', region=(200, 240, 2400, 1400), lang='japan')
+        if ocr_tool.check_text_exists('閑催中', region=(200, 240, 2400, 1400), lang='japan'):
             break
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
 
 
 def tianshilianjie():
-    ClickByOCR.init_ocr(lang='ch')
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500), lang='en')
-    ClickByOCR.find_and_click_text('天使链接', region=(2180, 160, 1000, 1500), lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500), lang='en')
+    ocr_tool.click_on_text('天使链接', region=(1392, 160, 1000, 1500), lang='ch')
     sleep(2)
     while True:
-        ClickByOCR.find_and_click_text('OK', region=(200, 240, 2400, 1400), lang='en')
+        ocr_tool.click_on_text('OK', region=(200, 240, 2400, 1400), lang='en')
         sleep(2)
         pyautogui.click(x=1424, y=1131, button='left', duration=1)
         sleep(2)
-        ClickByOCR.find_and_click_text('とじる', region=(200, 240, 2400, 1400), lang='japan')
-        if ClickByOCR.check_text('スタミナ', region=(200, 240, 2400, 1400), lang='japan'):
+        ocr_tool.click_on_text('とじる', region=(200, 240, 2400, 1400), lang='japan')
+        if ocr_tool.check_text_exists('スタミナ', region=(200, 240, 2400, 1400), lang='japan'):
             break
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
 
 
 def shaonvyishuqitan():
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500), lang='ch')
-    ClickByOCR.find_and_click_text('少女艺术奇谭', region=(2180, 160, 1000, 1500), lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500), lang='ch')
+    ocr_tool.click_on_text('少女艺术奇谭', region=(1392, 160, 1000, 1500), lang='ch')
     sleep(2)
     # 按住鼠标左键
     pyautogui.mouseDown(x=2870, y=520, button='left')
@@ -275,32 +276,34 @@ def shaonvyishuqitan():
     while True:
         pyautogui.click(x=1424, y=1536, button='left', duration=1)
         sleep(2)
-        if ClickByOCR.check_text('ネーロ', region=(200, 240, 2400, 1400), lang='japan'):
+        if ocr_tool.check_text_exists('ネーロ', region=(200, 240, 2400, 1400), lang='japan'):
             break
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
 
 
 def qiannianzhanzheng():
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500), lang='ch')
-    ClickByOCR.find_and_click_text('干年战争', region=(2180, 560, 1000, 1100), lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500), lang='ch')
+    ocr_tool.click_on_text('干年战争', region=(1392, 160, 1000, 1500), lang='ch')
     sleep(2)
     while True:
         pyautogui.mouseDown(x=1418, y=1000, button='left')
         sleep(2)
         pyautogui.mouseUp(button='left')
         sleep(2)
-        ClickByOCR.find_and_click_text('OK', region=(200, 240, 2400, 1400), lang='en')
+        ocr_tool.click_on_text('OK', region=(200, 240, 2400, 1400), lang='en')
         sleep(2)
-        if ClickByOCR.check_text('ランク', region=(200, 240, 2400, 1400), lang='japan'):
+        if ocr_tool.check_text_exists('ランク', region=(200, 240, 2400, 1400), lang='japan'):
             break
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
 
 
 def tonghuabianjing():
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500), lang='ch')
-    ClickByOCR.find_and_click_text('童话边境', region=(2180, 160, 1000, 1500), lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500), lang='ch')
+    ocr_tool.click_on_text('童话边境', region=(1392, 160, 1000, 1500), lang='ch')
     sleep(2)
     # 按住鼠标左键
     pyautogui.mouseDown(x=2870, y=520, button='left')
@@ -317,19 +320,20 @@ def tonghuabianjing():
         sleep(2)
         pyautogui.mouseUp(button='left')
         sleep(2)
-        ClickByOCR.find_and_click_text('OK', region=(200, 240, 2400, 1400), lang='en')
+        ocr_tool.click_on_text('OK', region=(200, 240, 2400, 1400), lang='en')
         sleep(2)
-        ClickByOCR.find_and_click_text('閉じる', region=(200, 240, 2400, 1400), lang='japan')
+        ocr_tool.click_on_text('閉じる', region=(200, 240, 2400, 1400), lang='japan')
         sleep(2)
-        if ClickByOCR.check_text('Rank', region=(200, 240, 2400, 1400), lang='en'):
+        if ocr_tool.check_text_exists('Rank', region=(200, 240, 2400, 1400), lang='en'):
             break
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
 
 
 def mid_night_girls():
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500), lang='ch')
-    ClickByOCR.find_and_click_text('MidNightGirls', region=(2180, 160, 1000, 1500), lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500), lang='ch')
+    ocr_tool.click_on_text('MidNightGirls', region=(1392, 160, 1000, 1500), lang='ch')
     sleep(2)
     # 按住鼠标左键
     pyautogui.mouseDown(x=2870, y=520, button='left')
@@ -344,19 +348,20 @@ def mid_night_girls():
     while True:
         pyautogui.click(x=1424, y=1131, button='left', duration=1)
         sleep(2)
-        ClickByOCR.find_and_click_text('GAME START', region=(200, 240, 2400, 1400), lang='en')
+        ocr_tool.click_on_text('GAME START', region=(200, 240, 2400, 1400), lang='en')
         sleep(2)
-        ClickByOCR.find_and_click_text('閉じる', region=(200, 240, 2400, 1400), lang='japan')
+        ocr_tool.click_on_text('閉じる', region=(200, 240, 2400, 1400), lang='japan')
         sleep(2)
-        if ClickByOCR.check_text('イベント', region=(200, 240, 2400, 1400), lang='japan'):
+        if ocr_tool.check_text_exists('イベント', region=(200, 240, 2400, 1400), lang='japan'):
             break
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
 
 
 def guaiwunvhai():
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500), lang='ch')
-    ClickByOCR.find_and_click_text('怪物女孩', region=(2180, 160, 1000, 1500), lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500), lang='ch')
+    ocr_tool.click_on_text('怪物女孩', region=(1392, 160, 1000, 1500), lang='ch')
     sleep(2)
     # 按住鼠标左键
     pyautogui.mouseDown(x=2870, y=520, button='left')
@@ -371,21 +376,22 @@ def guaiwunvhai():
     while True:
         pyautogui.click(x=1424, y=1131, button='left', duration=1)
         sleep(2)
-        ClickByOCR.find_and_click_text('OK', region=(200, 240, 2400, 1400), lang='en')
+        ocr_tool.click_on_text('OK', region=(200, 240, 2400, 1400), lang='en')
         sleep(2)
         pyautogui.click(x=1424, y=1131, button='left', duration=1)
         sleep(2)
-        ClickByOCR.find_and_click_text('閉じる', region=(200, 240, 2400, 1400), lang='japan')
+        ocr_tool.click_on_text('閉じる', region=(200, 240, 2400, 1400), lang='japan')
         sleep(2)
-        if ClickByOCR.check_text('ガチャ', region=(200, 240, 2400, 1400), lang='japan'):
+        if ocr_tool.check_text_exists('ガチャ', region=(200, 240, 2400, 1400), lang='japan'):
             break
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
 
 
 def xianzhelianmeng():
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500), lang='ch')
-    ClickByOCR.find_and_click_text('贤者联盟', region=(2180, 160, 1000, 1500), lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500), lang='ch')
+    ocr_tool.click_on_text('贤者联盟', region=(1392, 160, 1000, 1500), lang='ch')
     sleep(2)
     # 按住鼠标左键
     pyautogui.mouseDown(x=2870, y=520, button='left')
@@ -402,22 +408,23 @@ def xianzhelianmeng():
         # sleep(2)
         pyautogui.click(x=1424, y=1170, button='left', duration=1, clicks=2)
         sleep(2)
-        # ClickByOCR.find_and_click_text('OK', region=(200, 240, 2400, 1400), lang='en')
+        # ocr_tool.click_on_text('OK', region=(200, 240, 2400, 1400), lang='en')
         # sleep(2)
         pyautogui.click(x=1424, y=1567, button='left', duration=1, clicks=2)
         sleep(2)
 
-        ClickByOCR.find_and_click_text('x', region=(200, 240, 2400, 1400), lang='en')
+        ocr_tool.click_on_text('x', region=(200, 240, 2400, 1400), lang='en')
         sleep(2)
-        if ClickByOCR.check_text('Rank', region=(200, 240, 2400, 1400), lang='en'):
+        if ocr_tool.check_text_exists('Rank', region=(200, 240, 2400, 1400), lang='en'):
             break
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
 
 
 def tangguochongtu():
-    ClickByOCR.find_and_click_text('dmm', region=(2180, 160, 1000, 1500), lang='ch')
-    ClickByOCR.find_and_click_text('糖果冲突', region=(2180, 160, 1000, 1500), lang='ch')
+    ocr_tool = OCRClickTool(lang="ch", screenshot_path="./pic/screenshotOCR.png")
+    ocr_tool.click_on_text('dmm', region=(1392, 160, 1000, 1500), lang='ch')
+    ocr_tool.click_on_text('糖果冲突', region=(1392, 160, 1000, 1500), lang='ch')
     sleep(2)
     # 按住鼠标左键
     pyautogui.mouseDown(x=2870, y=520, button='left')
@@ -432,27 +439,27 @@ def tangguochongtu():
     while True:
         pyautogui.click(x=1424, y=1567, button='left', duration=1, clicks=2)
         sleep(2)
-        ClickByOCR.find_and_click_text('OK', region=(924, 674, 987, 585), lang='en')
+        ocr_tool.click_on_text('OK', region=(924, 674, 987, 585), lang='en')
         sleep(2)
-        ClickByOCR.find_and_click_text('SKIP', region=(200, 240, 2600, 600), lang='en')
+        ocr_tool.click_on_text('SKIP', region=(200, 240, 2600, 600), lang='en')
         sleep(2)
-        if ClickByOCR.check_text('ガチャ', region=(200, 240, 2400, 1400), lang='japan'):
+        if ocr_tool.check_text_exists('ガチャ', region=(200, 240, 2400, 1400), lang='japan'):
             break
     # 使用完毕后手动释放 OCR 内存
-    ClickByOCR.release_ocr()
+    ocr_tool.release_resources()
 
 
 if __name__ == '__main__':
-    # miwuliecheshaonv()
+    # miwuliecheshaonv()#有问题
     # guerdegongzuo()
-    # xianzhelianmeng()
     # juruhuanxiangjizhan()
+    # xianzhelianmeng()# 稍有问题
     # tianqibeilun()
-    # mid_night_girls()
+    # mid_night_girls()#稍有问题 免费十连
     # deepone()
     # tangguochongtu()
     # guaiwunvhai()
-    # tonghuabianjing()
+    # tonghuabianjing()#shaoyouwenti/
     # qiannianzhanzheng()
     # shaonvyishuqitan()
     # tianshilianjie()

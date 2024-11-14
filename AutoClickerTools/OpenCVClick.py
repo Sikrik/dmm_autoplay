@@ -26,7 +26,7 @@ class OpenCVClick:
             print(f"截图失败: {e}")
             return None
 
-    def find_template_center(self, img_model_path, region=None, confidence_threshold=0.7):
+    def find_template_center(self, img_model_path, region=None, confidence_threshold=0.9):
         """
         在指定区域内匹配模板图片，并返回中心坐标。
         :param img_model_path: 模板图片路径
@@ -75,11 +75,11 @@ class OpenCVClick:
         if coordinates:
             pyautogui.click(coordinates[0], coordinates[1], button='left', duration=0.3)
             print(f"点击坐标: {coordinates}")
-            time.sleep(1)
+            time.sleep(0.5)
         else:
             print("坐标无效，未执行点击")
 
-    def routine_click(self, img_model_path, name, region=None, confidence_threshold=0.8):
+    def routine_click(self, img_model_path, name=None, region=None, confidence_threshold=0.8):
         """
         通用模板匹配和点击操作例程。
         :param img_model_path: 模板图片路径
@@ -99,5 +99,5 @@ class OpenCVClick:
 # 调用示例
 if __name__ == "__main__":
     click_handler = OpenCVClick()
-    click_handler.routine_click("./pic/terminal.png", '终端')
-    click_handler.routine_click("./pic/terminal.png", '终端区域', region=(0, 240, 2800, 1400))
+    click_handler.routine_click("../pic/terminal.png", '终端')
+    click_handler.routine_click("../pic/terminal.png", '终端区域', region=(0, 240, 2800, 1400))

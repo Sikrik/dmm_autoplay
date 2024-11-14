@@ -1,0 +1,37 @@
+{
+  "text": "Quest",
+  "region": [987, 1544, 239, 108],
+  "lang": "en",
+  "left": {
+  "text": "デイリー",
+  "region": [384, 1231, 271, 165],
+  "lang": "japan",
+  "left":  {
+  "text": "一括スキップ",
+  "region": [1747, 1328, 295, 157],
+  "lang": "japan",
+  "left": {
+  "text": "スキップ",
+  "region": [1780, 1154, 412, 138],
+  "lang": "japan",
+  "left":  {
+  "text": "次へ",
+  "region": [1226, 1529, 401, 137],
+  "lang": "japan",
+  "left": {
+  "text": "次へ",
+  "region": [1430, 1525, 407, 144],
+  "lang": "japan",
+  "left": null,
+  "right":null
+},
+  "right":null
+},
+  "right":null
+},
+  "right":null
+},
+  "right":null
+},
+  "right":null
+}
