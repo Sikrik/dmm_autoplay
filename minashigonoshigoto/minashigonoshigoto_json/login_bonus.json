@@ -1,0 +1,48 @@
+{
+  "text": "dmm",
+  "region": [1392, 160, 1000, 1500],
+  "lang": "en",
+  "left": {
+  "text": "孤儿的工作",
+  "region": [1392, 160, 1000, 1500],
+  "lang": "ch",
+  "left": {
+  "start_pos": [2870,520],
+  "end_pos": [2870,570],
+  "lang": "ch",
+  "swipe": "swipe",
+  "waiting_time": 5,
+  "left": {
+    "text": "O K",
+    "region": [1229, 1149, 386, 151],
+    "lang": "en",
+    "waiting_time": 10 ,
+    "left": {
+    "click": "click",
+    "x": 1440,
+    "y": 900,
+    "waiting_time": 15,
+    "left": {
+    "text": "SKIP",
+    "region": [2397, 316, 293, 115],
+    "lang": "en",
+    "waiting_time": 2,
+    "left":{
+    "text": "閉じる",
+    "region": [1223, 1162, 403, 160],
+    "lang": "japan",
+    "left":null ,
+    "right": null
+    } ,
+    "right": null
+    },
+    "right": null
+  },
+    "right": null
+  },
+  "right": null
+},
+  "right": null
+},
+  "right": null
+}

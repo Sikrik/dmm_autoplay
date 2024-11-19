@@ -19,17 +19,17 @@
       "region": [2138, 432, 148, 146],
       "recognition":"OpenCV" ,
       "template":"./minashigonoshigoto_pic/close.png" ,
-        "comment":"点击战斗完成后的×键" ,
+      "comment":"点击战斗完成后的×键" ,
       "left": {
       "text": "次へ",
       "region": [1232, 1533, 377, 125],
       "lang": "japan",
-        "comment": "点击×键后的次へ",
+      "comment": "点击×键后的次へ",
       "left": {
       "text": "次へ",
       "region": [1232, 1533, 377, 125],
       "lang": "japan",
-        "comment": "点击×键后的次へ后的次へ",
+      "comment": "点击×键后的次へ后的次へ",
       "left": null,
       "right": null
     },

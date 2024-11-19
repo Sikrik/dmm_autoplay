@@ -1,0 +1,46 @@
+{
+  "text": "dmm",
+  "region": [1392, 160, 1000, 1500],
+  "lang": "en",
+  "left": {
+  "text": "巨乳幻想激战",
+  "region": [1392, 160, 1000, 1500],
+  "lang": "ch",
+  "left": {
+  "start_pos": [2870,520],
+  "end_pos": [2870,580],
+  "swipe": "swipe",
+  "waiting_time": 10,
+    "left": {
+      "click": "click",
+      "x": 1440,
+      "y": 900,
+      "waiting_time": 5,
+      "left": {
+      "text":"閉じる",
+        "region": [1281, 1485, 271, 131],
+        "lang": "japan",
+        "waiting_time": 5,
+        "left": {
+      "text":"閉じる",
+        "region": [1281, 1485, 271, 131],
+        "lang": "japan",
+        "left":  {
+      "text":"閉じる",
+        "region": [1281, 1485, 271, 131],
+        "lang": "japan",
+        "left": null,
+        "right": null
+      },
+        "right": null
+      },
+        "right": null
+      },
+      "right": null
+    },
+    "right": null
+  },
+  "right": null
+},
+  "right": null
+}

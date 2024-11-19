@@ -39,11 +39,11 @@ class OCRClickTool:
             img = cv2.cvtColor(cv2.imread(img_path), cv2.COLOR_BGR2RGB)
             if img is None:
                 logging.error(f"无法读取图像：{img_path}")
-                return None  # 返回空列表而不是None
+                return [None]
             return self.ocr.ocr(img) if self.ocr else []
         except Exception as e:
             logging.error(f"OCR识别过程中发生错误: {e}")
-            return None  # 捕获异常并返回空列表
+            return [None]
 
     def find_text_center(self, word, region=None):
         """计算识别文本的中心坐标"""
@@ -53,17 +53,24 @@ class OCRClickTool:
         y_center = (word[0][0][1] + word[0][2][1]) / 2 + region[1]
         return x_center, y_center
 
-    def find_numeric_value(self, region=None):
-        """在指定区域查找数值并返回第一个识别到的数值"""
+    def find_numeric_value(self, region=None, max_retries=2):
         img_path = self._capture_screenshot(region)
         result = self._ocr_recognition(img_path)
-
-        if not result:
-            logging.info("未识别到任何文本。")
-            return None
+        retries = 0
+        while retries < max_retries:
+            result = self._ocr_recognition(img_path)
+            logging.info(result)
+            if result is [None]:
+                logging.info("未识别到任何文本，重试中...")
+                retries += 1
+                sleep(1)  # 等待1秒后重试
+                continue
+            break  # 识别成功，跳出循环
 
         logging.info("OCR 识别结果: %s", result)
         for line in result:
+            if line is None:
+                return None
             for word in line:
                 if word[1][0].isdigit():  # 检查识别结果是否为数值
                     logging.info("识别到的数值: %s", word[1][0])
@@ -72,7 +79,7 @@ class OCRClickTool:
         logging.info("未识别到数值。")
         return None
 
-    def click_on_text(self, target_text, region=None, lang='ch', reuse_last_screenshot=False, max_retries=2):
+    def click_on_text(self, target_text, region=None, lang='ch', reuse_last_screenshot=False, max_retries=2,response_time=2):
         """
 
         :param target_text: 目标文本
@@ -92,7 +99,7 @@ class OCRClickTool:
             if result == [None]:
                 logging.info("未识别到任何文本，重试中...")
                 retries += 1
-                sleep(1)  # 等待1秒后重试
+                sleep(response_time)  # 等待1秒后重试
                 continue
 
             logging.info("OCR 识别结果: %s", result)
@@ -117,7 +124,7 @@ class OCRClickTool:
         return False
 
 
-    def check_text_exists(self, target_text, region=None, lang='ch', reuse_last_screenshot=False):
+    def check_text_exists(self, target_text, region=None, lang='ch', reuse_last_screenshot=False,response_time=1):
         """检查指定文本是否存在于区域内"""
         self._init_ocr_model(lang)
         img_path = self._capture_screenshot(region)
@@ -138,6 +145,7 @@ class OCRClickTool:
                 if word is not None and word[1] is not None and target_text in word[1][0]:
                     x, y = self.find_text_center(word, region)
                     logging.info(f"识别到文本 '{target_text}' 位于 x={x}, y={y}")
+                    sleep(response_time)
                     return True
 
         logging.info(f"未找到文本 '{target_text}'。")

@@ -1,8 +1,8 @@
 import time
 from time import sleep
 import pyautogui
-from AutoClickerTools2.OCRClickTool import OCRClickTool
-from autoplay_minashigonoshigoto import screenshot_path
+from AutoClickerTools.OCRClickTool import OCRClickTool
+
 
 """
 一键领取领取游戏中的登陆奖励
@@ -453,16 +453,16 @@ if __name__ == '__main__':
     # miwuliecheshaonv()#有问题
     # guerdegongzuo()
     # juruhuanxiangjizhan()
-    # xianzhelianmeng()# 稍有问题
-    # tianqibeilun()
-    # mid_night_girls()#稍有问题 免费十连
-    # deepone()
-    # tangguochongtu()
-    # guaiwunvhai()
-    # tonghuabianjing()#shaoyouwenti/
-    # qiannianzhanzheng()
-    # shaonvyishuqitan()
-    # tianshilianjie()
-    # yaoguailuanwu()
-    # chuanqisiyecao()
+    xianzhelianmeng()# 稍有问题
+    tianqibeilun()
+    mid_night_girls()#稍有问题 免费十连
+    deepone()
+    tangguochongtu()
+    guaiwunvhai()
+    tonghuabianjing()#shaoyouwenti/
+    qiannianzhanzheng()
+    shaonvyishuqitan()
+    tianshilianjie()
+    yaoguailuanwu()
+    chuanqisiyecao()
     shanyaoxingqishi()

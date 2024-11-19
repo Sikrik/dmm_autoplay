@@ -75,8 +75,10 @@ class OpenCVClicker:
         if coordinates:
             logging.info(f"正在点击 {name}")
             self.auto_click(coordinates)
+            return True
         else:
             logging.info(f"未找到 {name}")
+            return False
 
 # 调用示例
 if __name__ == "__main__":
