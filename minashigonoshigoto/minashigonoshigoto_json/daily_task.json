@@ -4,7 +4,7 @@
   "lang": "en",
   "left": {
     "text": "デイリー",
-    "region": [384, 1231, 271, 165],
+    "region": [378, 1250, 299, 151],
     "lang": "japan",
     "left": {
       "text": "一括スキップ",
@@ -16,7 +16,7 @@
         "lang": "japan",
         "left": {
           "text": "次へ",
-          "region": [1226, 1529, 401, 137],
+          "region": [1207, 1519, 454, 174],
           "lang": "japan",
           "left": {
             "text": "次へ",

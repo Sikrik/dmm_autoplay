@@ -276,7 +276,7 @@ def shaonvyishuqitan():
     while True:
         pyautogui.click(x=1424, y=1536, button='left', duration=1)
         sleep(2)
-        if ocr_tool.check_text_exists('ネーロ', region=(200, 240, 2400, 1400), lang='japan'):
+        if ocr_tool.check_text_exists('ネーロ', region=(365, 249, 392, 104), lang='japan'):
             break
     # 使用完毕后手动释放 OCR 内存
     ocr_tool.release_resources()
@@ -453,16 +453,16 @@ if __name__ == '__main__':
     # miwuliecheshaonv()#有问题
     # guerdegongzuo()
     # juruhuanxiangjizhan()
-    xianzhelianmeng()# 稍有问题
-    tianqibeilun()
-    mid_night_girls()#稍有问题 免费十连
-    deepone()
-    tangguochongtu()
-    guaiwunvhai()
-    tonghuabianjing()#shaoyouwenti/
-    qiannianzhanzheng()
-    shaonvyishuqitan()
-    tianshilianjie()
-    yaoguailuanwu()
-    chuanqisiyecao()
+    #xianzhelianmeng()# 稍有问题
+    #tianqibeilun()
+    #mid_night_girls()#稍有问题 免费十连
+    #deepone()
+    #tangguochongtu()
+    #guaiwunvhai()
+    #tonghuabianjing()#shaoyouwenti/
+    #qiannianzhanzheng()
+    #shaonvyishuqitan()
+    #tianshilianjie()
+    #yaoguailuanwu()
+    #chuanqisiyecao()
     shanyaoxingqishi()

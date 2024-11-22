@@ -2,48 +2,48 @@
   "text": "参戦",
   "region": [1844, 1314, 389, 121],
   "lang": "japan",
-  "left":{
-  "text": "決定",
-  "region": [2084, 1376, 289, 109],
-  "lang": "japan",
-  "left":{
-  "text": "出撃",
-  "region": [2265, 1344, 394, 124],
-  "lang": "japan",
-    "waiting_time": 2,
-  "left":{
-      "recognition": "OpenCV",
-      "template":"./minashigonoshigoto_pic/close.png" ,
-      "region":[2095, 437, 227, 172],
+  "left": {
+    "text": "決定",
+    "region": [2084, 1376, 289, 109],
+    "lang": "japan",
     "left": {
-      "text": "次へ",
-      "region": [1231, 1548, 384, 125],
+      "text": "出撃",
+      "region": [2265, 1344, 394, 124],
       "lang": "japan",
       "waiting_time": 2,
-      "left":  {
-      "text": "次へ",
-      "region": [1231, 1548, 384, 125],
-      "lang": "japan",
-      "left": null,
-      "right": null
-    },
-      "right": null
-    } ,
-    "right":null
+      "left": {
+        "recognition": "OpenCV",
+        "template": "./minashigonoshigoto_pic/close.png",
+        "region": [2095, 437, 227, 172],
+        "left": {
+          "text": "次へ",
+          "region": [1231, 1548, 384, 125],
+          "lang": "japan",
+          "waiting_time": 3,
+          "left": {
+            "text": "次へ",
+            "region": [1231, 1548, 384, 125],
+            "lang": "japan",
+            "left": null,
+            "right": null
+          },
+          "right": null
+        },
+        "right": null
       },
-  "right": {
-  "text": "O K",
-  "region": [1219, 1149, 405, 167],
-  "lang": "en",
-  "left":null,
-  "right": {
-      "recognition": "OpenCV",
-      "template":"./minashigonoshigoto_pic/refresh.png" ,
-      "region":[1326, 471, 123, 111]
+      "right": {
+        "text": "O K",
+        "region": [1219, 1149, 405, 167],
+        "lang": "en",
+        "left": null,
+        "right": null
       }
+    },
+    "right": {
+      "recognition": "OpenCV",
+      "template": "./minashigonoshigoto_pic/refresh.png",
+      "region": [1326, 471, 123, 111]
     }
-} ,
-  "right": null
-},
+  },
   "right": null
 }

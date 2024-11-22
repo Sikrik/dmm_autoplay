@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 class OCRClickTool:
     def __init__(self, lang='ch',screenshot_path = None):
         """初始化OCRClickTool实例，设置语言和默认截图路径"""
-        self.ocr = PaddleOCR(use_angle_cls=True, lang=lang, show_log=False)
+        self.ocr = PaddleOCR(use_angle_cls=True, lang=lang, show_log=False,det=False)
         self.lang = lang
         self.screenshot_path = screenshot_path
         self.last_screenshot = None
@@ -72,9 +72,8 @@ class OCRClickTool:
             if line is None:
                 return None
             for word in line:
-                if word[1][0].isdigit():  # 检查识别结果是否为数值
-                    logging.info("识别到的数值: %s", word[1][0])
-                    return int(word[1][0])
+                logging.info("识别到的文本: %s", word[1][0])
+                return word[1][0]
 
         logging.info("未识别到数值。")
         return None
@@ -124,7 +123,7 @@ class OCRClickTool:
         return False
 
 
-    def check_text_exists(self, target_text, region=None, lang='ch', reuse_last_screenshot=False,response_time=1):
+    def check_text_exists(self, target_text, region=None, lang='ch', reuse_last_screenshot=False,response_time=1.5):
         """检查指定文本是否存在于区域内"""
         self._init_ocr_model(lang)
         img_path = self._capture_screenshot(region)

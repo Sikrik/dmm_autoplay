@@ -1,0 +1,68 @@
+{
+  "text": "召喚",
+  "region": [1967, 1555, 189, 142],
+  "lang": "japan",
+  "waiting_time": 3,
+  "left": {
+    "text": "<",
+    "recognition": "OpenCV",
+    "template": "./juru_pic/daily_task/gacha_ahead.png",
+    "region": [160, 908, 121, 120],
+    "lang": "en",
+    "left": {
+      "text": "<",
+      "recognition": "OpenCV",
+      "template": "./juru_pic/daily_task/gacha_ahead.png",
+      "region": [160, 908, 121, 120],
+      "lang": "en",
+      "left": {
+        "text": "無料",
+        "region": [1442, 1311, 363, 170],
+        "lang": "japan",
+        "left": {
+          "text": "SKIP",
+          "region": [2342, 280, 185, 70],
+          "lang": "en",
+          "left": {
+            "text": "閉じる",
+            "region": [2093, 1501, 354, 100],
+            "lang": "japan",
+            "left": {
+              "text": "<",
+              "recognition": "OpenCV",
+              "template": "./juru_pic/daily_task/gacha_ahead.png",
+              "region": [160, 908, 121, 120],
+              "lang": "en",
+              "left": {
+                "text": "無料",
+                "region": [1826, 1330, 352, 151],
+                "lang": "japan",
+                "left": {
+                  "text": "SKIP",
+                  "region": [2342, 280, 185, 70],
+                  "lang": "en",
+                  "left": {
+                    "text": "閉じる",
+                    "region": [2093, 1501, 354, 100],
+                    "lang": "japan",
+                    "left": null,
+                    "right": null
+                  },
+                  "right": null
+                },
+                "right": null
+              },
+              "right": null
+            },
+            "right": null
+          },
+          "right": null
+        },
+        "right": null
+      },
+      "right": null
+    },
+    "right": null
+  },
+  "right": null
+}

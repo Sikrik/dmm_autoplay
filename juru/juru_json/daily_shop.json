@@ -1,0 +1,44 @@
+{
+  "text": "SHOP",
+  "region": [2254, 1497, 257, 187],
+  "lang": "en",
+  "left": {
+    "text": "市",
+    "region": [1436, 954, 284, 194],
+    "lang": "japan",
+    "left": {
+      "text": "期間限定",
+      "region": [1157, 400, 293, 104],
+      "lang": "japan",
+      "waiting_time": 0,
+      "left": {
+        "text": "無料",
+        "region": [535, 977, 135, 131],
+        "lang": "japan",
+        "left": {
+          "text": "無料",
+          "region": [1460, 1489, 360, 131],
+          "lang": "japan",
+          "left": {
+            "text": "OK",
+            "region": [1236, 1489, 390, 130],
+            "lang": "en",
+            "left": {
+              "text": "ホーム",
+              "region": [355, 1541, 202, 144],
+              "lang": "japan",
+              "left": null,
+              "right": null
+            },
+            "right": null
+          },
+          "right": null
+        },
+        "right": null
+      },
+      "right": null
+    },
+    "right": null
+  },
+  "right": null
+}

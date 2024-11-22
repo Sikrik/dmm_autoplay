@@ -63,4 +63,4 @@ class TemplateScreenClicker:
 # 使用示例
 if __name__ == "__main__":
     screen_clicker = TemplateScreenClicker(confidence=0.8, delay=2)
-    screen_clicker.automated_clicking_process("../pic/terminal.png", "终端")
+    screen_clicker.automated_clicking_process("../temporary_images/terminal.png", "终端")

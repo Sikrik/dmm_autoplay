@@ -1,222 +1,116 @@
 {
-      "text": "冒険",
-      "region": [1283, 1541, 290, 142],
-      "lang": "japan",
+  "text": "冒険",
+  "region": [
+    1283,
+    1541,
+    290,
+    142
+  ],
+  "lang": "japan",
   "waiting_time": 0,
-  "left":{
-      "text": "MATERIAL",
-      "region": [1861, 1363, 205, 70],
-      "lang": "en",
-    "left":{
+  "left": {
+    "text": "MATERIAL",
+    "region": [
+      1861,
+      1363,
+      205,
+      70
+    ],
+    "lang": "en",
+    "left": {
       "text": "一括収集",
-      "region": [1027, 1147, 333, 104],
-      "lang": "japan",
-      "left":     {
-      "text": "確定",
-      "region": [1478, 1250, 317, 110],
-      "lang": "japan",
-      "left": {
-      "text": "OK",
-      "region": [1262, 1487, 322, 113],
-      "lang": "en",
-      "left": {
-      "text": "レゴル収集",
-      "region": [1556, 416, 297, 76],
+      "region": [
+        1027,
+        1147,
+        333,
+        104
+      ],
       "lang": "japan",
       "left": {
-      "text": "一括収集",
-      "region": [1027, 1147, 333, 104],
-      "lang": "japan",
-      "left":    {
-      "text": "確定",
-      "region": [1478, 1250, 317, 110],
-      "lang": "japan",
-      "left":     {
-      "text": "OK",
-      "region": [1262, 1487, 322, 113],
-      "lang": "en",
-      "left":     {
-      "text": "ホーム",
-      "region": [355, 1541, 202, 144],
-      "lang": "japan",
-      "left":     {
-      "text": "SHOP",
-      "region": [2236, 1549, 300, 136],
-      "lang": "japan",
-      "left": {
-      "text": "市",
-      "region": [1436, 954, 284, 194],
-      "lang": "japan",
-      "left":     {
-      "text": "期間限定",
-      "region": [1157, 400, 293, 104],
-      "lang": "japan",
-        "waiting_time": 0,
-      "left":     {
-      "text": "無料",
-      "region": [1460, 1489, 360, 131],
-      "lang": "japan",
-      "left":     {
-      "text": "無料",
-      "region": [1460, 1489, 360, 131],
-      "lang": "japan",
-      "left":     {
-      "text": "OK",
-      "region": [1236, 1489, 390, 130],
-      "lang": "en",
-      "left":     {
-      "text": "ホーム",
-      "region": [355, 1541, 202, 144],
-      "lang": "japan",
-      "left": {
-      "text": "召喚",
-      "region": [1967, 1555, 189, 142],
-      "lang": "japan",
-      "left":     {
-      "text": "<",
-      "recognition": "OpenCV",
-      "template":"./juru_pic/daily_task/gacha_ahead.png" ,
-      "region": [160, 908, 121, 120],
-      "lang": "en",
-      "left":     {
-      "text": "<",
-      "recognition": "OpenCV",
-      "template":"./juru_pic/daily_task/gacha_ahead.png" ,
-      "region": [160, 908, 121, 120],
-      "lang": "en",
-      "left": {
-      "text": "無料",
-      "region": [1442, 1311, 363, 170],
-      "lang": "japan",
-      "left": {
-      "text": "SKIP",
-      "region": [2342, 280, 185, 70],
-      "lang": "en",
-      "left": {
-      "text": "閉じる",
-      "region": [2093, 1501, 354, 100],
-      "lang": "japan",
-      "left": {
-      "text": "<",
-      "recognition": "OpenCV",
-      "template":"./juru_pic/daily_task/gacha_ahead.png" ,
-      "region": [160, 908, 121, 120],
-      "lang": "en",
-      "left": {
-      "text": "無料",
-      "region": [1826, 1330, 352, 151],
-      "lang": "japan",
-      "left": {
-      "text": "SKIP",
-      "region": [2342, 280, 185, 70],
-      "lang": "en",
-      "left": {
-      "text": "閉じる",
-      "region": [2093, 1501, 354, 100],
-      "lang": "japan",
-      "left": {
-      "text": "冒険",
-      "region": [1283, 1541, 290, 142],
-      "lang": "japan",
-      "left": {
-      "text": "SPECIAL STAGE",
-      "region": [763, 787, 244, 60],
-      "lang": "en",
-      "left": {
-      "text": "迷宮",
-      "region": [1528, 582, 319, 213],
-      "lang": "japan",
-      "left": {
-      "text": "Hard",
-      "region": [2252, 425, 201, 62],
-      "lang": "en",
-      "left": {
-      "text": "一括スキップ",
-      "region": [1213, 1116, 439, 142],
-      "lang": "japan",
-      "left": {
-      "text": "確定",
-      "region": [1463, 1242, 338, 114],
-      "lang": "japan",
-      "left": {
-      "text": "OK",
-      "region": [1327, 1500, 185, 92],
-      "lang": "en",
-      "left": {
-      "text": "ホーム",
-      "region": [355, 1541, 202, 144],
-      "lang": "japan",
-      "left": null,
+        "text": "確定",
+        "region": [
+          1478,
+          1250,
+          317,
+          110
+        ],
+        "lang": "japan",
+        "left": {
+          "text": "OK",
+          "region": [
+            1262,
+            1487,
+            322,
+            113
+          ],
+          "lang": "en",
+          "left": {
+            "text": "レゴル収集",
+            "region": [
+              1556,
+              416,
+              297,
+              76
+            ],
+            "lang": "japan",
+            "left": {
+              "text": "一括収集",
+              "region": [
+                1027,
+                1147,
+                333,
+                104
+              ],
+              "lang": "japan",
+              "left": {
+                "text": "確定",
+                "region": [
+                  1478,
+                  1250,
+                  317,
+                  110
+                ],
+                "lang": "japan",
+                "left": {
+                  "text": "OK",
+                  "region": [
+                    1262,
+                    1487,
+                    322,
+                    113
+                  ],
+                  "lang": "en",
+                  "left": {
+                    "text": "ホーム",
+                    "region": [
+                      355,
+                      1541,
+                      202,
+                      144
+                    ],
+                    "lang": "japan",
+                    "waiting_time": 3,
+                    "left": null,
+                    "right": null
+                  },
+                  "right": null
+                },
+                "right": null
+              },
+              "right": null
+            },
+            "right": null
+          },
+          "right": null
+        },
+        "right": null
+      },
       "right": null
     },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    },
-      "right": null
-    } ,
     "right": null
-    } ,
+  },
   "right": null
-    }
+}
 
 
 

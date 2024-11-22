@@ -17,7 +17,7 @@ def get_last_two_images_dimensions(folder_path):
     last_two_images = images[-2:]
     last_image = images[-1:]
 
-    # 创建一个字典来存储图片的路径和对应的宽高
+    # 创建字典来存储图片的路径和对应的宽高
     dimensions = []
 
     # 遍历最后两个图片文件

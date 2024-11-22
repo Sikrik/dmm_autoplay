@@ -9,10 +9,10 @@
   "left": {
   "start_pos": [2870,520],
   "end_pos": [2870,580],
-  "swipe": "swipe",
+  "action": "swipe",
   "waiting_time": 10,
     "left": {
-      "click": "click",
+      "action": "click",
       "x": 1440,
       "y": 900,
       "waiting_time": 5,
