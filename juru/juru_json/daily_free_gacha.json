@@ -7,13 +7,13 @@
     "text": "<",
     "recognition": "OpenCV",
     "template": "./juru_pic/daily_task/gacha_ahead.png",
-    "region": [160, 908, 121, 120],
+    "region": [171, 904, 100, 105],
     "lang": "en",
     "left": {
       "text": "<",
       "recognition": "OpenCV",
       "template": "./juru_pic/daily_task/gacha_ahead.png",
-      "region": [160, 908, 121, 120],
+      "region": [171, 904, 100, 105],
       "lang": "en",
       "left": {
         "text": "無料",
@@ -31,7 +31,7 @@
               "text": "<",
               "recognition": "OpenCV",
               "template": "./juru_pic/daily_task/gacha_ahead.png",
-              "region": [160, 908, 121, 120],
+              "region": [171, 904, 100, 105],
               "lang": "en",
               "left": {
                 "text": "無料",

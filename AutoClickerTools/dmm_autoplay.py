@@ -186,27 +186,35 @@ class AutoplayDMMGame:
   def _check_bp(self, minimum_bp, region=(1870, 321, 50, 68)):
     """
     :param minimum_bp: 最小bp值，当小于此值返回false
-    :param region:
-    :return:
+    :param region: 区域参数
+    :return: BP值是否小于最小值
     """
     try:
-      result = self.ocr_tool.find_numeric_value(region=region)
+        result = self.ocr_tool.find_numeric_value(region=region)
     except Exception as e:
-      logging.error(f"在调用 OCR 工具时发生异常: {e}")
-      return False
+        logging.error(f"在调用 OCR 工具时发生异常: {e}")
+        return False
+
+    if result is None:
+        logging.error("OCR 工具返回了 None，无法解析 BP 值")
+        return True
+
     try:
-      value = int(re.match(r"^(\d+)", result).group(1))
-    except AttributeError:
-      logging.error("正则表达式匹配失败，无法解析 BP 值")
-      return False
+        match = re.match(r"^(\d+)", str(result))
+        if match:
+            value = int(match.group(1))
+        else:
+            logging.error("正则表达式匹配失败，无法解析 BP 值")
+            return False
     except ValueError:
-      logging.error("解析 BP 值时发生错误")
-      return False
-    if value is not None and isinstance(value, (int, float)) and value <= minimum_bp:
-      logging.info("BP已小于规定值")
-      self.popup_message()
-      return False
+        logging.error("解析 BP 值时发生错误")
+        return False
+
+    if value <= minimum_bp:
+        logging.info("BP已小于规定值")
+        self.popup_message()
+        return False
     else:
-      logging.info("BP值正常")
-      return True
+        logging.info("BP值正常")
+        return True
   

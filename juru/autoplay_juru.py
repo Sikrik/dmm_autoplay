@@ -1,4 +1,5 @@
 import logging
+from time import sleep
 
 from AutoClickerTools.dmm_autoplay import AutoplayDMMGame
 
@@ -12,7 +13,7 @@ class Autoplayjuru(AutoplayDMMGame):
         self.execute_task("juru_json/login_bonus.json")
 
     def rescue_mission(self):
-        while self._check_bp(1,region=(1531, 280, 110, 80)):
+        while self._check_bp(1,region=(1600, 260, 160, 80)):
             self.execute_task("juru_json/rescue_mission.json")
 
     def daily_task(self):
@@ -29,9 +30,14 @@ class Autoplayjuru(AutoplayDMMGame):
 
 
 autoplayjuru = Autoplayjuru()
-#autoplayjuru.login_bonus()
-#autoplayjuru.daily_task()
-#autoplayjuru.daily_migong()
-#autoplayjuru.daily_shop()
-#autoplayjuru.daily_free_gacha()
-autoplayjuru.rescue_mission()
+# autoplayjuru.login_bonus()
+# # sleep(10)
+# autoplayjuru.daily_task()
+# sleep(10)
+# autoplayjuru.daily_migong()
+# sleep(10)
+# autoplayjuru.daily_shop()
+# sleep(10)
+# autoplayjuru.daily_free_gacha()
+# sleep(10)
+#autoplayjuru.rescue_mission()

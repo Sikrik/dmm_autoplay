@@ -3,6 +3,22 @@ td{
     border-radius: 10px;
 }
 table{
-    width: 800px;
-    height: 500px;
+    width: 750px;
+    height: 540px;
+}
+h5{
+    display: flex inline;
+    justify-content: center;
+    -webkit-app-region: drag;
+    text-align: center;
+    width:90%;
+}
+#closeButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.title{
+
 }

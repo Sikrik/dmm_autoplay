@@ -78,9 +78,8 @@ class OCRClickTool:
         logging.info("未识别到数值。")
         return None
 
-    def click_on_text(self, target_text, region=None, lang='ch', reuse_last_screenshot=False, max_retries=2,response_time=2):
+    def click_on_text(self, target_text, region=None, lang='ch', reuse_last_screenshot=False, max_retries=2, response_time=2):
         """
-
         :param target_text: 目标文本
         :param region: 识别的坐标以及识别框
         :param lang: language
@@ -89,36 +88,48 @@ class OCRClickTool:
         :return:
         """
         """查找目标文本并在其中心位置点击"""
-        self._init_ocr_model(lang)
-        img_path = self._capture_screenshot(region)
+        try:
+            self._init_ocr_model(lang)
+            img_path = self._capture_screenshot(region)
+        except Exception as e:
+            logging.error(f"初始化 OCR 模型或截图失败: {e}")
+            return False
+    
         retries = 0
         while retries < max_retries:
-            result = self._ocr_recognition(img_path)
+            try:
+                result = self._ocr_recognition(img_path)
+            except Exception as e:
+                logging.error(f"OCR 识别失败: {e}")
+                retries += 1
+                sleep(response_time)
+                continue
+    
             logging.info(result)
             if result == [None]:
                 logging.info("未识别到任何文本，重试中...")
                 retries += 1
                 sleep(response_time)  # 等待1秒后重试
                 continue
-
+    
             logging.info("OCR 识别结果: %s", result)
             for line in result:
                 for word in line:
                     if target_text in word[1][0]:
-                        x, y = self.find_text_center(word, region)
-                        pyautogui.moveTo(x, y, duration=0.2)
-                        pyautogui.click(button='left')
-                        logging.info(f"点击文本 '{target_text}' 位于 x={x}, y={y}")
-                        sleep(1)
-                        return True
-                    # else:
-                    #     retries += 1
-                    #     return False
-
+                        try:
+                            x, y = self.find_text_center(word, region)
+                            pyautogui.moveTo(x, y, duration=0.2)
+                            pyautogui.click(button='left')
+                            logging.info(f"点击文本 '{target_text}' 位于 x={x}, y={y}")
+                            sleep(1)
+                            return True
+                        except Exception as e:
+                            logging.error(f"移动鼠标或点击失败: {e}")
+                            return False
+    
             logging.info(f"未找到目标文本 '{target_text}'。")
-            retries  += 1
-            return False
-
+            retries += 1
+    
         logging.error(f"在最大重试次数内未找到目标文本 '{target_text}'。")
         return False
 

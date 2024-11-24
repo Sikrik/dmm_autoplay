@@ -1,8 +1,20 @@
+import json
+from pathlib import Path
+
+import cv2
+import pyautogui
 from PIL import Image
 import os
 
 
+
 def get_last_two_images_dimensions(folder_path):
+    """
+    获取指定文件夹中最后两个图片文件的尺寸信息。
+    
+    :param folder_path: 图片所在文件夹的路径。
+    :return: 包含最后两个图片文件宽高的列表，如果没有足够的图片或路径无效则返回提示信息。
+    """
     # 确保提供的路径存在且是一个目录
     if not os.path.isdir(folder_path):
         return "提供的路径不是一个有效的文件夹"
@@ -36,6 +48,15 @@ def get_last_two_images_dimensions(folder_path):
     return dimensions
 
 
-# 使用示例
+
+
+
+
+
+
+#获取最后两幅截图的长宽
 folder_path = 'C:\\Users\\81209\\Pictures\\Screenshots'
 print(get_last_two_images_dimensions(folder_path))
+
+
+

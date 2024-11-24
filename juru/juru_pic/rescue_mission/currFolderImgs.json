@@ -1,0 +1,17 @@
+{
+  "images": [
+    {
+      "img_path": "../juru/juru_pic/rescue_mission/bp2.png",
+      "region": [2053, 666, 419, 102]
+    }, {
+      "img_path": "../juru/juru_pic/rescue_mission/refresh.png",
+      "region": [2084, 437, 119, 99]
+    }, {
+      "img_path": "../juru/juru_pic/rescue_mission/fanhui.png",
+      "region": [1800, 1267, 276, 104]
+    }, {
+      "img_path": "../juru/juru_pic/rescue_mission/tiaozhan.png",
+      "region": [2135, 1262, 413, 109]
+    }
+  ]
+}

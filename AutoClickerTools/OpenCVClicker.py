@@ -1,7 +1,6 @@
 import time
 import cv2
 import pyautogui
-import os
 import logging
 
 # 配置日志

@@ -453,16 +453,16 @@ if __name__ == '__main__':
     # miwuliecheshaonv()#有问题
     # guerdegongzuo()
     # juruhuanxiangjizhan()
-    #xianzhelianmeng()# 稍有问题
-    #tianqibeilun()
-    #mid_night_girls()#稍有问题 免费十连
-    #deepone()
-    #tangguochongtu()
-    #guaiwunvhai()
-    #tonghuabianjing()#shaoyouwenti/
+    # xianzhelianmeng()# 稍有问题
+    # tianqibeilun()
+    # mid_night_girls()#稍有问题 免费十连
+    # deepone()
+    # tangguochongtu()
+    # guaiwunvhai()
+    # tonghuabianjing()#shaoyouwenti/
     #qiannianzhanzheng()
-    #shaonvyishuqitan()
-    #tianshilianjie()
-    #yaoguailuanwu()
-    #chuanqisiyecao()
+    # shaonvyishuqitan()
+    # tianshilianjie()
+    yaoguailuanwu()
+    chuanqisiyecao()
     shanyaoxingqishi()

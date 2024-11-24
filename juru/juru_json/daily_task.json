@@ -1,93 +1,42 @@
 {
   "text": "冒険",
-  "region": [
-    1283,
-    1541,
-    290,
-    142
-  ],
+  "region": [1283, 1541, 290, 170],
   "lang": "japan",
-  "waiting_time": 0,
   "left": {
     "text": "MATERIAL",
-    "region": [
-      1861,
-      1363,
-      205,
-      70
-    ],
+    "region": [1861, 1363, 205, 70],
     "lang": "en",
     "left": {
       "text": "一括収集",
-      "region": [
-        1027,
-        1147,
-        333,
-        104
-      ],
+      "region": [1027, 1147, 333, 104],
       "lang": "japan",
       "left": {
         "text": "確定",
-        "region": [
-          1478,
-          1250,
-          317,
-          110
-        ],
+        "region": [1478, 1250, 317, 110],
         "lang": "japan",
         "left": {
           "text": "OK",
-          "region": [
-            1262,
-            1487,
-            322,
-            113
-          ],
+          "region": [1262, 1487, 322, 113],
           "lang": "en",
           "left": {
             "text": "レゴル収集",
-            "region": [
-              1556,
-              416,
-              297,
-              76
-            ],
+            "region": [1556, 416, 297, 76],
             "lang": "japan",
             "left": {
               "text": "一括収集",
-              "region": [
-                1027,
-                1147,
-                333,
-                104
-              ],
+              "region": [1027, 1147, 333, 104],
               "lang": "japan",
               "left": {
                 "text": "確定",
-                "region": [
-                  1478,
-                  1250,
-                  317,
-                  110
-                ],
+                "region": [1478, 1250, 317, 110],
                 "lang": "japan",
                 "left": {
                   "text": "OK",
-                  "region": [
-                    1262,
-                    1487,
-                    322,
-                    113
-                  ],
+                  "region": [1262, 1487, 322, 113],
                   "lang": "en",
                   "left": {
                     "text": "ホーム",
-                    "region": [
-                      355,
-                      1541,
-                      202,
-                      144
-                    ],
+                    "region": [355, 1541, 202, 170],
                     "lang": "japan",
                     "waiting_time": 3,
                     "left": null,

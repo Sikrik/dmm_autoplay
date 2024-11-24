@@ -1,9 +1,9 @@
 {
   "text": "冒険",
-  "region": [1283, 1541, 290, 142],
+  "region": [1283, 1541, 290, 170],
   "lang": "japan",
   "left": {
-    "text": "SPECIAL STAGE",
+    "text": "SPECIALSTAGE",
     "region": [763, 787, 244, 60],
     "lang": "en",
     "left": {
@@ -11,11 +11,11 @@
       "region": [1528, 582, 319, 213],
       "lang": "japan",
       "left": {
-        "text": "Harr",
-        "region": [2252, 425, 201, 62],
+        "text": "Hard",
+        "region": [2252, 425, 201, 90],
         "lang": "en",
         "left": {
-          "text": "一括スキップ",
+          "text": "一括スキッフ",
           "region": [1213, 1116, 439, 150],
           "lang": "japan",
           "left": {
@@ -28,7 +28,7 @@
               "lang": "en",
               "left": {
                 "text": "ホーム",
-                "region": [355, 1541, 202, 144],
+                "region": [355, 1541, 202, 170],
                 "lang": "japan",
                 "left": null,
                 "right": null
