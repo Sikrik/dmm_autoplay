@@ -1,4 +1,6 @@
 import json
+import logging
+from json import JSONDecodeError
 from pathlib import Path
 import cv2
 import pyautogui
@@ -6,9 +8,10 @@ from PIL import Image
 import os
 
 
-def get_curr_folder_imgs_region_to_json(folder_path, screenshot_path="./screenshot.png"):
+def get_curr_folder_imgs_region_to_json(folder_path, screenshot_path):
   """
   从给定文件夹中读取图片，并使用模板匹配在界面上找到图片的位置。
+  增删改查的增
   """
   json_path = Path(folder_path) / "currFolderImgs.json"
   pyautogui.screenshot().save(screenshot_path)
@@ -18,6 +21,8 @@ def get_curr_folder_imgs_region_to_json(folder_path, screenshot_path="./screensh
       data = json.load(f)
   except FileNotFoundError:
     data = {"images": []}  # 初始化数据结构
+  except JSONDecodeError:
+    data = {"images": []}
 
   img_basenames = {file_base_name(img['img_path']) for img in data["images"]}
 
@@ -36,8 +41,8 @@ def get_curr_folder_imgs_region_to_json(folder_path, screenshot_path="./screensh
         if max_val < 0.8:
           continue
 
-        x, y, ww, hh = max_loc[0] - 25, max_loc[1] - 25, w + 50, h + 25
-        print(filename, max_val, x, y, ww, hh)
+        x, y, ww, hh = max_loc[0] - 25, max_loc[1] - 50, w + 50, h + 75
+        print(f"匹配到文件{filename}, 置信度{max_val}, 修改后的识别范围为({x}, {y}, {ww}, {hh})")
         new_data = {
           "img_path": norm_path(file_path),
           "region": (x, y, ww, hh)
@@ -47,7 +52,7 @@ def get_curr_folder_imgs_region_to_json(folder_path, screenshot_path="./screensh
   with open(json_path, 'w') as f:
     json.dump(data, f)  # 美化输出
 
-  print(f'Data has been written to {json_path}')
+  logging.info(f'Data has been written to {json_path}')
 
 
 def mod_reg(task_json, currFolderImags_json):
@@ -81,12 +86,12 @@ def file_base_name(original_path):
 def update_region(node, images):
   """更新daily_task_data中template对应的region"""
   if node is None:
+    logging.warning("Node is None")
     return
-
   if 'template' in node:
     for img in images['images']:
       if file_base_name(node['template']) == file_base_name(img['img_path']):
-        print(f"开始更新task_json中的{node['template']}，对应currFolderImgs中的{img['img_path']}")
+        logging.info(f"开始更新task_json中的{node['template']}，对应currFolderImgs中的{img['img_path']}")
         node['region'] = img['region']
         break
 
@@ -99,4 +104,4 @@ def update_region(node, images):
 
 if __name__ == '__main__':
   get_curr_folder_imgs_region_to_json(folder_path="../juru/juru_pic/rescue_mission", screenshot_path="../juru/temporary_images/tools_screenshot.png")
-  mod_reg(task_json="../juru/juru_json/rescue_mission.json", currFolderImags_json="../juru/juru_pic/rescue_mission/currFolderImgs.json")
+  # mod_reg(task_json="../juru/juru_json/daily_migong.json", currFolderImags_json="../juru/juru_pic/migong/currFolderImgs.json")

@@ -111,7 +111,7 @@ class AutoplayDMMGame:
               stack.append(current.get('left'))
         except Exception as e:
           # 处理execute_node可能抛出的异常
-          print(f"Error executing node: {e}")
+          logging.error(f"Error executing node: {e}")
           # 可以选择继续处理或中断遍历
           continue
 
@@ -153,7 +153,7 @@ class AutoplayDMMGame:
 
 
   def _execute_recognition(self, node):
-    logging.info("执行识别操作")
+    logging.info("执行识别图片并点击的操作")
     return self.openCVClicker.routine_click(img_model_path=node['template'], region=node['region'])
 
   def _execute_text(self, node):
@@ -183,7 +183,7 @@ class AutoplayDMMGame:
       logging.error(f"执行点击操作时发生错误: {e}")
 
 
-  def _check_bp(self, minimum_bp, region=(1870, 321, 50, 68)):
+  def _check_bp(self, minimum_bp, region):
     """
     :param minimum_bp: 最小bp值，当小于此值返回false
     :param region: 区域参数
@@ -205,7 +205,7 @@ class AutoplayDMMGame:
             value = int(match.group(1))
         else:
             logging.error("正则表达式匹配失败，无法解析 BP 值")
-            return False
+            return True
     except ValueError:
         logging.error("解析 BP 值时发生错误")
         return False
@@ -217,4 +217,5 @@ class AutoplayDMMGame:
     else:
         logging.info("BP值正常")
         return True
-  
+  def find_template(self,template_path,region):
+    return self.openCVClicker.find_template(template_path,region)

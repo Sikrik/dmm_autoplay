@@ -1,31 +1,31 @@
 {
   "text": "SHOP",
-  "region": [2254, 1497, 257, 187],
+  "region": [2254, 1497, 257, 200],
   "lang": "en",
   "left": {
     "text": "市",
-    "region": [1436, 954, 284, 194],
+    "region": [1436, 954, 284, 230],
     "lang": "japan",
     "left": {
       "text": "期間限定",
-      "region": [1157, 400, 293, 104],
+      "region": [1157, 400, 293, 150],
       "lang": "japan",
       "waiting_time": 0,
       "left": {
         "text": "無料",
-        "region": [535, 977, 135, 131],
+        "region": [535, 977, 135, 170],
         "lang": "japan",
         "left": {
           "text": "無料",
-          "region": [1460, 1489, 360, 131],
+          "region": [1460, 1489, 360, 170],
           "lang": "japan",
           "left": {
             "text": "OK",
-            "region": [1236, 1489, 390, 130],
+            "region": [1236, 1489, 390, 170],
             "lang": "en",
             "left": {
               "text": "ホーム",
-              "region": [355, 1541, 202, 144],
+              "region": [355, 1541, 202, 180],
               "lang": "japan",
               "left": null,
               "right": null

@@ -1,8 +1,3 @@
-import json
-from pathlib import Path
-
-import cv2
-import pyautogui
 from PIL import Image
 import os
 

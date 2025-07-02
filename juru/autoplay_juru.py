@@ -1,6 +1,6 @@
 import logging
 from time import sleep
-
+from AutoClickerTools.OpenCVClicker import OpenCVClicker
 from AutoClickerTools.dmm_autoplay import AutoplayDMMGame
 
 # 初始化日志配置
@@ -13,7 +13,7 @@ class Autoplayjuru(AutoplayDMMGame):
         self.execute_task("juru_json/login_bonus.json")
 
     def rescue_mission(self):
-        while self._check_bp(1,region=(1600, 260, 160, 80)):
+        while self.find_template(template_path="./juru_pic/rescue_mission/quxiao.png",region=(1011, 1316, 410, 195)):
             self.execute_task("juru_json/rescue_mission.json")
 
     def daily_task(self):
@@ -28,10 +28,19 @@ class Autoplayjuru(AutoplayDMMGame):
     def daily_shop(self):
         self.execute_task("juru_json/daily_shop.json")
 
+    def expedition(self):
+        self.execute_task("juru_json/expedition.json")
+
+    def paiqian(self):
+        self.execute_task("juru_json/paiqian.json")
 
 autoplayjuru = Autoplayjuru()
+
 # autoplayjuru.login_bonus()
-# # sleep(10)
+# sleep(10)
+
+
+# autoplayjuru.paiqian()
 # autoplayjuru.daily_task()
 # sleep(10)
 # autoplayjuru.daily_migong()
@@ -40,4 +49,4 @@ autoplayjuru = Autoplayjuru()
 # sleep(10)
 # autoplayjuru.daily_free_gacha()
 # sleep(10)
-#autoplayjuru.rescue_mission()
+autoplayjuru.rescue_mission()

@@ -1,0 +1,71 @@
+{
+  "text": "特典",
+  "region": [2290, 1096, 174, 174],
+  "lang": "japan",
+  "waiting_time": 3,
+  "left": {
+    "text": "派",
+    "region": [1754, 595, 289, 194],
+    "lang": "japan",
+    "left": {
+      "text": "全て受取",
+      "region": [755, 445, 303, 139],
+      "lang": "japan",
+      "left": {
+        "recognition": "OpenCV",
+        "template": "./juru_pic/paiqian/OK.png",
+        "region": [1180, 1475, 510, 161],
+        "waiting_time": 10,
+        "left": {
+          "text": "派遣",
+          "region": [2245, 1283, 337, 142],
+          "lang": "japan",
+          "left": {
+            "text": "確定",
+            "region": [1460, 1240, 361, 145],
+            "lang": "japan",
+            "waiting_time": 10,
+            "left": {
+              "text": "可能",
+              "region": [270, 594, 732, 811],
+              "lang": "japan",
+              "left": {
+                "text": "派遣",
+                "region": [2245, 1283, 337, 142],
+                "lang": "japan",
+                "left": {
+                  "text": "確定",
+                  "region": [1460, 1240, 361, 145],
+                  "lang": "japan",
+                  "waiting_time": 10,
+                  "left": {
+                    "text": "可能",
+                    "region": [270, 594, 732, 811],
+                    "lang": "japan",
+                    "left": {
+                      "text": "派遣",
+                      "region": [2245, 1283, 337, 142],
+                      "lang": "japan",
+                      "left": {
+                        "text": "確定",
+                        "region": [1460, 1240, 361, 145],
+                        "lang": "japan",
+                        "waiting_time": 10
+                      },
+                      "right": null
+                    }
+                  }
+                },
+                "right": null
+              }
+            }
+          },
+          "right": null
+        }
+      },
+      "right": null
+    },
+    "right": null
+  },
+  "right": null
+}

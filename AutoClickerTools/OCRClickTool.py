@@ -26,7 +26,7 @@ class OCRClickTool:
             self.ocr = PaddleOCR(use_angle_cls=True, lang=lang, show_log=False)
             self.lang = lang
 
-    def _capture_screenshot(self, region=None):
+    def _capture_screenshot(self, region):
         """截取屏幕并保存到指定路径，返回截图的绝对路径"""
         self.last_screenshot = pyautogui.screenshot(region=region)
         # print(f"{self.screenshot_path}")
@@ -45,7 +45,7 @@ class OCRClickTool:
             logging.error(f"OCR识别过程中发生错误: {e}")
             return [None]
 
-    def find_text_center(self, word, region=None):
+    def find_text_center(self, word, region):
         """计算识别文本的中心坐标"""
         if region is None:
             region = (0, 0)
@@ -53,7 +53,7 @@ class OCRClickTool:
         y_center = (word[0][0][1] + word[0][2][1]) / 2 + region[1]
         return x_center, y_center
 
-    def find_numeric_value(self, region=None, max_retries=2):
+    def find_numeric_value(self, region, max_retries=2):
         img_path = self._capture_screenshot(region)
         result = self._ocr_recognition(img_path)
         retries = 0
@@ -78,7 +78,7 @@ class OCRClickTool:
         logging.info("未识别到数值。")
         return None
 
-    def click_on_text(self, target_text, region=None, lang='ch', reuse_last_screenshot=False, max_retries=2, response_time=2):
+    def click_on_text(self, target_text, region, lang='ch', reuse_last_screenshot=False, max_retries=2, response_time=2):
         """
         :param target_text: 目标文本
         :param region: 识别的坐标以及识别框
@@ -134,7 +134,7 @@ class OCRClickTool:
         return False
 
 
-    def check_text_exists(self, target_text, region=None, lang='ch', reuse_last_screenshot=False,response_time=1.5):
+    def check_text_exists(self, target_text, region, lang='ch', reuse_last_screenshot=False,response_time=1.5):
         """检查指定文本是否存在于区域内"""
         self._init_ocr_model(lang)
         img_path = self._capture_screenshot(region)

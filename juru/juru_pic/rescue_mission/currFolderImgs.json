@@ -12,6 +12,12 @@
     }, {
       "img_path": "../juru/juru_pic/rescue_mission/tiaozhan.png",
       "region": [2135, 1262, 413, 109]
+    }, {
+      "img_path": "D:\\auto_play\\juru\\juru_pic\\rescue_mission\\liberation.png",
+      "region": [1477, 1333, 313, 161]
+    }, {
+      "img_path": "D:\\auto_play\\juru\\juru_pic\\rescue_mission\\quxiao.png",
+      "region": [1011, 1316, 410, 195]
     }
   ]
 }

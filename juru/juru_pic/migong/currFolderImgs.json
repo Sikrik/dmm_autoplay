@@ -1,0 +1,14 @@
+{
+  "images": [
+    {
+      "img_path": "D:\\auto_play\\juru\\juru_pic\\migong\\skip.png",
+      "region": [463, 1080, 437, 191]
+    }, {
+      "img_path": "D:\\auto_play\\juru\\juru_pic\\migong\\migong.png",
+      "region": [961, 522, 924, 332]
+    }, {
+      "img_path": "D:\\auto_play\\juru\\juru_pic\\migong\\special_stage.png",
+      "region": [666, 654, 442, 255]
+    }
+  ]
+}
